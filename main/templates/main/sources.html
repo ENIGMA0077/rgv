@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Источники по религиоведению</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell page-article">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a href="{% url 'home' %}" class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </a>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="{% url 'home' %}" class="nav-link tilt-card" data-tilt>Главная</a>
+          <a href="{% url 'religionology' %}" class="nav-link tilt-card" data-tilt>Религиоведение</a>
+          <a href="{% url 'quiz' %}" class="nav-link tilt-card" data-tilt>Тест</a>
+          <a href="{% url 'crossword' %}" class="nav-link tilt-card" data-tilt>Кроссворд</a>
+          <a href="{% url 'terms' %}" class="nav-link tilt-card" data-tilt>Термины</a>
+        </nav>
+      </header>
+
+      <main class="content-page">
+        <section class="hero section-panel tilt-card" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">Учебные материалы</p>
+            <h1>ИСТОЧНИКИ</h1>
+            <p class="subtitle">Академические и справочные базы</p>
+          </div>
+        </section>
+
+        <section class="source-list section-panel tilt-card" data-tilt>
+          <ol>
+            <li><strong>Britannica.</strong> Religion. <a href="https://www.britannica.com/topic/religion" target="_blank" rel="noreferrer">https://www.britannica.com/topic/religion</a></li>
+            <li><strong>Britannica.</strong> Christianity. <a href="https://www.britannica.com/topic/Christianity" target="_blank" rel="noreferrer">https://www.britannica.com/topic/Christianity</a></li>
+            <li><strong>Britannica.</strong> Islam. <a href="https://www.britannica.com/topic/Islam" target="_blank" rel="noreferrer">https://www.britannica.com/topic/Islam</a></li>
+            <li><strong>Britannica.</strong> Buddhism. <a href="https://www.britannica.com/topic/Buddhism" target="_blank" rel="noreferrer">https://www.britannica.com/topic/Buddhism</a></li>
+            <li><strong>Stanford Encyclopedia of Philosophy.</strong> Religion. <a href="https://plato.stanford.edu/entries/religion/" target="_blank" rel="noreferrer">https://plato.stanford.edu/entries/religion/</a></li>
+            <li><strong>Oxford Reference.</strong> Oxford Dictionary of World Religions.</li>
+            <li><strong>MacMillan.</strong> Encyclopedia of Religion.</li>
+            <li><strong>Smith, Wilfred Cantwell.</strong> The Meaning and End of Religion. HarperCollins, 1963.</li>
+            <li><strong>Eliade, Mircea.</strong> The Sacred and the Profane. Harcourt, 1959.</li>
+            <li><strong>Roberts, Alex.</strong> Religion in Ancient and Medieval Europe. Routledge, 2012.</li>
+            <li><strong>Hinnells, John R.</strong> The Routledge Companion to the Study of Religion. Routledge, 2005.</li>
+            <li><strong>UNESCO.</strong> Education and cultural diversity resources.</li>
+          </ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

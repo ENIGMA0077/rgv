@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест по религиоведению</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell page-article">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a href="{% url 'home' %}" class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </a>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="{% url 'home' %}" class="nav-link tilt-card" data-tilt>Главная</a>
+          <a href="{% url 'religionology' %}" class="nav-link tilt-card" data-tilt>Религиоведение</a>
+          <a href="{% url 'quiz' %}" class="nav-link tilt-card" data-tilt>Тест</a>
+          <a href="{% url 'crossword' %}" class="nav-link tilt-card" data-tilt>Кроссворд</a>
+          <a href="{% url 'sources' %}" class="nav-link tilt-card" data-tilt>Источники</a>
+        </nav>
+      </header>
+
+      <main class="content-page">
+        <section class="hero section-panel tilt-card" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">Проверка знаний</p>
+            <h1>ТЕСТ</h1>
+            <p class="subtitle">Религиоведение</p>
+          </div>
+        </section>
+
+        <form class="quiz-form" data-quiz>
+          <div class="quiz-question" data-correct="1">
+            <h3>1. Что изучает религиоведение?</h3>
+            <label><input type="radio" name="q1" value="0"> Политическую систему государства</label>
+            <label><input type="radio" name="q1" value="1"> Религию как историческое и культурное явление</label>
+            <label><input type="radio" name="q1" value="0"> Химические процессы в природе</label>
+            <label><input type="radio" name="q1" value="0"> Нормы бухгалтерского учёта</label>
+          </div>
+
+          <div class="quiz-question" data-correct="2">
+            <h3>2. Какой элемент религии связан с ритуальными действиями?</h3>
+            <label><input type="radio" name="q2" value="0"> Только научный эксперимент</label>
+            <label><input type="radio" name="q2" value="0"> Только произведение искусства</label>
+            <label><input type="radio" name="q2" value="1"> Обряды и религиозные действия</label>
+            <label><input type="radio" name="q2" value="0"> Структура бюджета</label>
+          </div>
+
+          <div class="quiz-question" data-correct="1">
+            <h3>3. Что обычно понимается под религиозным сознанием?</h3>
+            <label><input type="radio" name="q3" value="0"> Компьютерная программа</label>
+            <label><input type="radio" name="q3" value="1"> Система переживаний, представлений и смыслов</label>
+            <label><input type="radio" name="q3" value="0"> Игровая стратегия</label>
+            <label><input type="radio" name="q3" value="0"> Метод статистики</label>
+          </div>
+
+          <div class="quiz-question" data-correct="1">
+            <h3>4. Какая функция религии связана с формированием ценностей?</h3>
+            <label><input type="radio" name="q4" value="0"> Функция финансового контроля</label>
+            <label><input type="radio" name="q4" value="1"> Морально-ценностная функция</label>
+            <label><input type="radio" name="q4" value="0"> Функция транспорта</label>
+            <label><input type="radio" name="q4" value="0"> Функция пошива одежды</label>
+          </div>
+
+          <div class="quiz-question" data-correct="0">
+            <h3>5. Что является основой христианства?</h3>
+            <label><input type="radio" name="q5" value="1"> Учение о Иисусе Христе</label>
+            <label><input type="radio" name="q5" value="0"> Платоновская метафизика</label>
+            <label><input type="radio" name="q5" value="0"> Традиция шаманизма</label>
+            <label><input type="radio" name="q5" value="0"> Учение о калькуляции</label>
+          </div>
+
+          <div class="quiz-question" data-correct="1">
+            <h3>6. Какой текст считается основным в исламе?</h3>
+            <label><input type="radio" name="q6" value="0"> Махабхарата</label>
+            <label><input type="radio" name="q6" value="1"> Коран</label>
+            <label><input type="radio" name="q6" value="0"> Авеста</label>
+            <label><input type="radio" name="q6" value="0"> Талмуд</label>
+          </div>
+
+          <div class="quiz-question" data-correct="2">
+            <h3>7. Что является центральным в буддизме?</h3>
+            <label><input type="radio" name="q7" value="0"> Создание армии</label>
+            <label><input type="radio" name="q7" value="0"> Поиск капитала</label>
+            <label><input type="radio" name="q7" value="1"> Освобождение от страдания</label>
+            <label><input type="radio" name="q7" value="0"> Развитие техники</label>
+          </div>
+
+          <div class="quiz-question" data-correct="2">
+            <h3>8. Что объединяет иудаизм, индуизм и синтоизм в учебной классификации?</h3>
+            <label><input type="radio" name="q8" value="0"> Их нельзя изучать в рамках религиоведения</label>
+            <label><input type="radio" name="q8" value="0"> Они не имеют текстов</label>
+            <label><input type="radio" name="q8" value="1"> Они рассматриваются как национальные или культурно связанные традиции</label>
+            <label><input type="radio" name="q8" value="0"> Они возникли только в Европе</label>
+          </div>
+
+          <div class="quiz-question" data-correct="0">
+            <h3>9. Что такое обряд?</h3>
+            <label><input type="radio" name="q9" value="1"> Ритуальное действие, повторяемое в религиозной практике</label>
+            <label><input type="radio" name="q9" value="0"> Формула химического уравнения</label>
+            <label><input type="radio" name="q9" value="0"> Вид технического отчёта</label>
+            <label><input type="radio" name="q9" value="0"> Декоративная фигура</label>
+          </div>
+
+          <div class="quiz-question" data-correct="2">
+            <h3>10. Что может включать в себя религиозная организация?</h3>
+            <label><input type="radio" name="q10" value="0"> Только школьное расписание</label>
+            <label><input type="radio" name="q10" value="0"> Только технические приборы</label>
+            <label><input type="radio" name="q10" value="1"> Сообщество верующих, лидеров и священнослужителей</label>
+            <label><input type="radio" name="q10" value="0"> Только карту города</label>
+          </div>
+
+          <div class="quiz-question" data-correct="1">
+            <h3>11. Что изучают в рамках религиоведческого анализа культуры?</h3>
+            <label><input type="radio" name="q11" value="0"> Только погодные условия</label>
+            <label><input type="radio" name="q11" value="1"> Искусство, архитектуру, литературу и общественные традиции</label>
+            <label><input type="radio" name="q11" value="0"> Технические стандарты</label>
+            <label><input type="radio" name="q11" value="0"> Правила программирования</label>
+          </div>
+
+          <div class="quiz-question" data-correct="0">
+            <h3>12. Какое положение соответствует буддийской традиции?</h3>
+            <label><input type="radio" name="q12" value="1"> Важны практика, мораль и освобождение от страдания</label>
+            <label><input type="radio" name="q12" value="0"> Значение имеет только военная дисциплина</label>
+            <label><input type="radio" name="q12" value="0"> Основное — накопление денег</label>
+            <label><input type="radio" name="q12" value="0"> Нельзя говорить о духовном</label>
+          </div>
+
+          <div class="quiz-question" data-correct="3">
+            <h3>13. Что такое конфессия?</h3>
+            <label><input type="radio" name="q13" value="0"> Часть учебного плана</label>
+            <label><input type="radio" name="q13" value="0"> Техника изготовления предметов</label>
+            <label><input type="radio" name="q13" value="0"> Вид археологического раскопа</label>
+            <label><input type="radio" name="q13" value="1"> Религиозная община или направление внутри религии</label>
+          </div>
+
+          <div class="quiz-question" data-correct="2">
+            <h3>14. В какой форме религия часто проявляется в обществе?</h3>
+            <label><input type="radio" name="q14" value="0"> Только в математических формулах</label>
+            <label><input type="radio" name="q14" value="0"> Только в лабораторных исследованиях</label>
+            <label><input type="radio" name="q14" value="1"> Через культовые практики, праздники и символы</label>
+            <label><input type="radio" name="q14" value="0"> Только в расписании занятий</label>
+          </div>
+
+          <div class="quiz-question" data-correct="1">
+            <h3>15. Почему религиоведение использует нейтральный подход?</h3>
+            <label><input type="radio" name="q15" value="0"> Чтобы заменить религию другими науками</label>
+            <label><input type="radio" name="q15" value="1"> Чтобы изучать религию как исторический и культурный феномен</label>
+            <label><input type="radio" name="q15" value="0"> Чтобы запретить исследование</label>
+            <label><input type="radio" name="q15" value="0"> Чтобы свести всё к одной традиции</label>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="submit" class="lux-button tilt-card" data-tilt>Проверить ответы</button>
+          </div>
+        </form>
+
+        <div class="result-box" id="quiz-result" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

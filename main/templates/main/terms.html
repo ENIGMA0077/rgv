@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Термины по религиоведению</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell page-article">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a href="{% url 'home' %}" class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </a>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="{% url 'home' %}" class="nav-link tilt-card" data-tilt>Главная</a>
+          <a href="{% url 'religionology' %}" class="nav-link tilt-card" data-tilt>Религиоведение</a>
+          <a href="{% url 'quiz' %}" class="nav-link tilt-card" data-tilt>Тест</a>
+          <a href="{% url 'crossword' %}" class="nav-link tilt-card" data-tilt>Кроссворд</a>
+          <a href="{% url 'sources' %}" class="nav-link tilt-card" data-tilt>Источники</a>
+        </nav>
+      </header>
+
+      <main class="content-page">
+        <section class="hero section-panel tilt-card" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">Словарь</p>
+            <h1>ТЕРМИНЫ</h1>
+            <p class="subtitle">Основные понятия религиоведения</p>
+          </div>
+        </section>
+
+        <section class="terms-grid">
+          <article class="term-card tilt-card" data-tilt><h3>РЕЛИГИЯ</h3><p>Система верований, символов, ритуалов и ценностей, связанных со сферой сакрального.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>ОБРЯД</h3><p>Ритуальное действие, повторяемое в религиозной практике и имеющее символическое значение.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>РИТУАЛ</h3><p>Структурированная последовательность действий, выполняемых в рамках религиозной или культурной традиции.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>КОНФЕССИЯ</h3><p>Религиозная община или направление внутри более широкой традиции.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>ТЕОЛОГИЯ</h3><p>Научное и философское осмысление религиозных доктрин, символов и представлений.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>САКРАЛЬНОЕ</h3><p>То, что воспринимается как священное, особенное, выходящее за рамки повседневной жизни.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>МИФ</h3><p>Нарратив, передающий представления о происхождении мира, богах, героях и ценностях сообщества.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>КУЛЬТ</h3><p>Форма религиозного почитания, связанная с символами, ритуалом и организацией верующих.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>ОБЩИНА</h3><p>Сообщество людей, объединённых общей религиозной традицией, практикой и идентичностью.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>СВЯЩЕННЫЕ ТЕКСТЫ</h3><p>Письменные источники, признаваемые религиозным сообществом как авторитетные и священные.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>МОНАШЕСТВО</h3><p>Форма религиозной жизни, связанная с особым образом жизни и дисциплиной.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>ПРАВЕДНОСТЬ</h3><p>Морально-нравственная категория, которой придаётся религиозное и этическое значение.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>МИРОЗЗРЕНИЕ</h3><p>Система представлений человека об устройстве мира, жизни и смысле существования.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>РИТУАЛЬНОЕ ПОВЕДЕНИЕ</h3><p>Действия, повторяющиеся в установленных формах и имеющие культурное и религиозное значение.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>РЕЛИГИОЗНОЕ ОБЩЕСТВО</h3><p>Форма социального объединения, основанная на веровании, культовой практике и общих ценностях.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>МЕДИТАЦИЯ</h3><p>Способ внутренней практики, направленный на сосредоточение, созерцание и духовное развитие.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>КАЛЕНДАРЬ</h3><p>Система определения дат религиозных праздников и ритуальных циклов.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>СИМВОЛ</h3><p>Образ, предмет или знак, несущий и выражающий религиозное содержание.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>ОБРЯДОВОСТЬ</h3><p>Система повторяющихся форм поведения, составляющих религиозную или культурную традицию.</p></article>
+          <article class="term-card tilt-card" data-tilt><h3>КУЛЬТУРА</h3><p>Совокупность ценностей, символов, искусства, норм и традиций, в которых религия может играть важную роль.</p></article>
+        </section>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

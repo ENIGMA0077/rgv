@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кроссворд по религиоведению</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell page-article">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a href="{% url 'home' %}" class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </a>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="{% url 'home' %}" class="nav-link tilt-card" data-tilt>Главная</a>
+          <a href="{% url 'religionology' %}" class="nav-link tilt-card" data-tilt>Религиоведение</a>
+          <a href="{% url 'quiz' %}" class="nav-link tilt-card" data-tilt>Тест</a>
+          <a href="{% url 'crossword' %}" class="nav-link tilt-card" data-tilt>Кроссворд</a>
+          <a href="{% url 'terms' %}" class="nav-link tilt-card" data-tilt>Термины</a>
+        </nav>
+      </header>
+
+      <main class="content-page">
+        <section class="hero section-panel tilt-card" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">Интерактивный блок</p>
+            <h1>КРОССВОРД</h1>
+            <p class="subtitle">Основные термины религиоведения</p>
+          </div>
+        </section>
+
+        <div class="crossword-panel section-panel tilt-card" data-tilt>
+          <div class="crossword-item" data-answer="религия">
+            <span>1. Система верований, символов и ритуалов.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="обряд">
+            <span>2. Ритуальное действие в религиозной традиции.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="ритуал">
+            <span>3. Повторяемая форма религиозного действия.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="культ">
+            <span>4. Совокупность почитания и религиозных действий.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="теология">
+            <span>5. Научное и философское изучение религии.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="буддизм">
+            <span>6. Традиция, связанная с учением Будды.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="ислам">
+            <span>7. Монотеистическая религия, основанная на Коране.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="христианство">
+            <span>8. Религиозная традиция, основанная на учении Христа.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="индуизм">
+            <span>9. Религиозная традиция Южной Азии.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="иудаизм">
+            <span>10. Религиозная традиция, исторически связанная с еврейским народом.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+          <div class="crossword-item" data-answer="синтоизм">
+            <span>11. Японская религиозная традиция, связанная с ками.</span>
+            <input type="text" maxlength="20" placeholder="Ответ" />
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" class="lux-button tilt-card" data-tilt id="crossword-check">Проверить</button>
+          </div>
+          <div class="result-box" id="crossword-result" aria-live="polite"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

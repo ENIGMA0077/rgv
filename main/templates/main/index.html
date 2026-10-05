@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Религиоведение</title>
+    <meta
+      name="description"
+      content="Интерактивный проект по религиоведению, истории и культуре."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <div class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </div>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="#about" class="nav-link tilt-card" data-tilt>О проекте</a>
+          <a href="#traditions" class="nav-link tilt-card" data-tilt>Религии</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section-panel tilt-card" id="about" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">История • Культура • Наука</p>
+            <h1>РЕЛИГИОВЕДЕНИЕ</h1>
+            <p class="subtitle">Интерактивный учебный проект</p>
+
+            <div class="meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Студент</span>
+                <span class="meta-value">E N I G M A</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Группа</span>
+                <span class="meta-value">3-26 QIB</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Курс</span>
+                <span class="meta-value">1-й семестр</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="{% url 'religionology' %}" class="lux-button primary tilt-card" data-tilt>
+                <span>Начать изучение</span>
+                <span class="button-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-emblem">
+              <span>✦</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-essay section-panel tilt-card" data-tilt>
+          <div class="section-heading left-aligned">
+            <p class="eyebrow">О проекте</p>
+            <h2>Религия как предмет научного изучения</h2>
+          </div>
+
+          <div class="essay-columns">
+            <p>
+              Религиоведение — это научная дисциплина, которая изучает религию как историческое,
+              культурное, социальное и философское явление. Она рассматривает не только
+              представления о высшей силе или сакральном, но и формы верования, ритуалы,
+              общественные институты, тексты, символику и роль религии в жизни человека и общества.
+            </p>
+            <p>
+              Данный проект создан для того, чтобы познакомить студента с основами религиоведческой
+              науки, показать многообразие религиозных традиций, а также осмыслить религию как
+              важный элемент культуры и социальной памяти. Весь материал изложен в нейтральной,
+              академической форме, без оценок и сравнений “лучше” или “хуже”.
+            </p>
+          </div>
+        </section>
+
+        <section class="traditions" id="traditions">
+          <div class="section-heading">
+            <p class="eyebrow">Мир религиозных традиций</p>
+            <h2>Религии мира</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-christianity"></div>
+              <div class="card-content">
+                <div class="card-tag">Христианство</div>
+                <h3>Христианство</h3>
+                <p class="card-summary">
+                  Мировая религия, основанная на вере в Иисуса Христа и единого Бога. Возникла в I веке н. э.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-christianity" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Христианство — мировая религия, основанная на вере в Иисуса Христа и единого Бога.</p>
+                      <p><strong>Где возникло:</strong> Возникло в I веке н. э. в Палестине, которая находилась в составе Римской империи.</p>
+                      <p><strong>Основная фигура:</strong> Иисус Христос.</p>
+                      <p><strong>Священная книга:</strong> Библия. В христианстве она включает Ветхий Завет и Новый Завет.</p>
+                      <p><strong>Основная идея:</strong> Вера в Бога, Иисуса Христа, любовь к человеку, милосердие и спасение.</p>
+                      <p><strong>Направления:</strong> Православие, католицизм, протестантизм.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-islam"></div>
+              <div class="card-content">
+                <div class="card-tag">Ислам</div>
+                <h3>Ислам</h3>
+                <p class="card-summary">
+                  Мировая религия, основанная на вере в единого Бога — Аллаха. Возникла в VII веке на Аравийском полуострове.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-islam" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Ислам — мировая религия, основанная на вере в единого Бога — Аллаха.</p>
+                      <p><strong>Где возник:</strong> Возник в VII веке на Аравийском полуострове.</p>
+                      <p><strong>Основная фигура:</strong> Пророк Мухаммад.</p>
+                      <p><strong>Священная книга:</strong> Коран.</p>
+                      <p><strong>Основная идея:</strong> Вера в единого Бога, молитва, соблюдение религиозных обязанностей, помощь нуждающимся и соблюдение нравственных норм.</p>
+                      <p><strong>Направления:</strong> Суннизм и шиизм.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-buddhism"></div>
+              <div class="card-content">
+                <div class="card-tag">Буддизм</div>
+                <h3>Буддизм</h3>
+                <p class="card-summary">
+                  Мировая религиозно-философская традиция, связанная с учением Будды. Возникла в Древней Индии.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-buddhism" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Буддизм — мировая религиозно-философская традиция, связанная с учением Будды.</p>
+                      <p><strong>Где возник:</strong> Возник в Древней Индии примерно в V–IV веках до н. э.</p>
+                      <p><strong>Основная фигура:</strong> Сиддхартха Гаутама, которого называют Буддой.</p>
+                      <p><strong>Священные тексты:</strong> Буддизм имеет большое количество текстов. Одним из важных собраний является Типитака.</p>
+                      <p><strong>Основная идея:</strong> Человек сталкивается со страданием. Буддийское учение показывает путь к освобождению от страдания через правильное понимание, нравственное поведение и развитие ума.</p>
+                      <p><strong>Направления:</strong> Тхеравада, махаяна и ваджраяна.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-judaism"></div>
+              <div class="card-content">
+                <div class="card-tag">Иудаизм</div>
+                <h3>Иудаизм</h3>
+                <p class="card-summary">
+                  Древняя монотеистическая религиозная традиция еврейского народа, сформировавшаяся на Древнем Ближнем Востоке.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-judaism" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Иудаизм — древняя монотеистическая религиозная традиция еврейского народа, то есть вера в одного Бога.</p>
+                      <p><strong>Где возник:</strong> Сформировался на Древнем Ближнем Востоке.</p>
+                      <p><strong>Основная идея:</strong> Вера в единого Бога и соблюдение религиозных и нравственных законов.</p>
+                      <p><strong>Священные тексты:</strong> Танах. Важной частью Танаха является Тора.</p>
+                      <p><strong>Особенность:</strong> Иудаизм тесно связан с историей, культурой и традициями еврейского народа.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-hinduism"></div>
+              <div class="card-content">
+                <div class="card-tag">Индуизм</div>
+                <h3>Индуизм</h3>
+                <p class="card-summary">
+                  Одна из древнейших религиозных традиций, сформировавшаяся в Индии. Не имеет одного основателя.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-hinduism" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Индуизм — одна из древнейших религиозных традиций, сформировавшаяся в Индии.</p>
+                      <p><strong>Где возник:</strong> Индийский субконтинент.</p>
+                      <p><strong>Основная особенность:</strong> Индуизм включает множество верований, обрядов и философских учений. У него нет одного основателя.</p>
+                      <p><strong>Священные тексты:</strong> Веды, Упанишады, «Бхагавадгита» и другие тексты.</p>
+                      <p><strong>Основные понятия:</strong> Карма — последствия поступков человека; дхарма — долг и правильный образ жизни; сансара — круг перерождений.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+
+            <article class="religion-card tilt-card" data-tilt>
+              <div class="card-art art-shinto"></div>
+              <div class="card-content">
+                <div class="card-tag">Синтоизм</div>
+                <h3>Синтоизм</h3>
+                <p class="card-summary">
+                  Традиционная религиозная система Японии, в которой большое значение имеют ками, природа, чистота и ритуалы.
+                </p>
+                <div class="card-details" hidden>
+                  <div class="card-details-inner">
+                    <div class="card-visual art-shinto" aria-hidden="true"></div>
+                    <div class="card-info">
+                      <p><strong>Что это:</strong> Синтоизм — традиционная религиозная система Японии.</p>
+                      <p><strong>Где возник:</strong> Япония.</p>
+                      <p><strong>Основное понятие:</strong> Ками — духи или священные силы, связанные с природой, местами, явлениями и предками.</p>
+                      <p><strong>Основная особенность:</strong> Большое значение имеют природа, чистота, традиции и ритуалы.</p>
+                      <p><strong>Священные тексты:</strong> К важным древним источникам относятся «Кодзики» и «Нихон сёки».</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="lux-button card-toggle tilt-card" data-tilt type="button" aria-expanded="false">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

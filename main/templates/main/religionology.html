@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Религиоведение</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell page-article">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a href="{% url 'home' %}" class="brand-block tilt-card" data-tilt>
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">Религиоведение</span>
+        </a>
+
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="{% url 'home' %}" class="nav-link tilt-card" data-tilt>Главная</a>
+          <a href="{% url 'religionology' %}" class="nav-link tilt-card" data-tilt>Религиоведение</a>
+          <a href="{% url 'quiz' %}" class="nav-link tilt-card" data-tilt>Тест</a>
+          <a href="{% url 'terms' %}" class="nav-link tilt-card" data-tilt>Термины</a>
+          <a href="{% url 'sources' %}" class="nav-link tilt-card" data-tilt>Источники</a>
+        </nav>
+      </header>
+
+      <main class="content-page">
+        <section class="hero section-panel tilt-card" data-tilt>
+          <div class="hero-copy">
+            <p class="eyebrow">Научный раздел</p>
+            <h1>РЕЛИГИОВЕДЕНИЕ</h1>
+            <p class="subtitle">Основы религиоведческой науки и мировых традиций</p>
+          </div>
+        </section>
+
+        <section class="study-grid">
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">01</span>
+            <h3>Что такое религия?</h3>
+            <p>
+              Религия — это система верований, символов, ритуалов и моральных норм,
+              связанных с представлением о сакральном, высшем, священном или трансцендентном.
+            </p>
+          </article>
+
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">02</span>
+            <h3>Что изучает религиоведение?</h3>
+            <p>
+              Оно изучает религию как историческое и культурное явление: тексты,
+              институты, обряды, мировоззрение, социальную роль и взаимодействие с обществом.
+            </p>
+          </article>
+
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">03</span>
+            <h3>Предмет религиоведения</h3>
+            <p>
+              Предметом науки является религиозная деятельность человека, религиозные идеи,
+              формы организации верующих и их влияние на культуру, историю и повседневность.
+            </p>
+          </article>
+
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">04</span>
+            <h3>Основные функции религии</h3>
+            <p>
+              Религия помогает человеку осмысливать мир, формирует систему ценностей,
+              поддерживает общественные связи и дает рамки для ритуала и переживания смысла.
+            </p>
+          </article>
+
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">05</span>
+            <h3>Основные элементы религии</h3>
+            <p>
+              К ним относятся религиозное сознание, представления, действия и обряды,
+              священные тексты, символы, организации и общины.
+            </p>
+          </article>
+
+          <article class="study-card tilt-card" data-tilt>
+            <span class="card-number">06</span>
+            <h3>Формы религиозных представлений</h3>
+            <p>
+              Это мифология, теология, священные тексты, символика, моральные предписания,
+              а также индивидуальные и коллективные переживания сакрального.
+            </p>
+          </article>
+        </section>
+
+        <section class="content-essay section-panel tilt-card" data-tilt>
+          <div class="section-heading left-aligned">
+            <p class="eyebrow">Роль в обществе</p>
+            <h2>Религия и культура</h2>
+          </div>
+          <div class="essay-columns">
+            <p>
+              Религия влияет на искусство, архитектуру, литературу, философию, право и нравственные нормы.
+              Она может формировать культурную идентичность, сохранять историческую память и участвовать в
+              общественной жизни через обряды, праздники и ритуальные практики.
+            </p>
+            <p>
+              В научной перспективе религия не рассматривается как “правильная” или “неправильная” система,
+              а как исторически сложившийся и культурно значимый феномен. Именно поэтому религиоведение
+              стремится к нейтральному и аналитическому описанию.
+            </p>
+          </div>
+        </section>
+
+        <section id="world-religions" class="info-section">
+          <div class="section-heading">
+            <p class="eyebrow">Мировые религии</p>
+            <h2>Основные традиции</h2>
+          </div>
+
+          <div class="religion-details-grid">
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header">
+                <span class="detail-tag">Христианство</span>
+              </div>
+              <p><strong>Краткое описание.</strong> Христианство — религиозная традиция, основанная на учении о Иисусе Христе; развивалась в контексте древнего Средиземноморья.</p>
+              <p><strong>Возникновение.</strong> Возникло в I веке н. э. в Палестине и на территории Римской империи.</p>
+              <p><strong>Основные положения.</strong> Бог, Христос, вера, любовь к ближнему, спасение, нравственное преображение.</p>
+              <p><strong>Священные тексты.</strong> Библия, включая Ветхий и Новый Завет.</p>
+              <p><strong>Направления.</strong> Католицизм, православие, протестантизм.</p>
+              <p><strong>Культурное значение.</strong> Влияние на искусство, музыку, литературу, календарь, мораль и общественный порядок.</p>
+              <p><strong>Интересный факт.</strong> Христианство стало одной из крупнейших мировых религиозных традиций и оказало глубокое влияние на европейскую культуру.</p>
+            </article>
+
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header">
+                <span class="detail-tag">Ислам</span>
+              </div>
+              <p><strong>Краткое описание.</strong> Ислам — монотеистическая религия, основанная на предании о едином Боге и откровениях, приписываемых Пророку Мухаммаду.</p>
+              <p><strong>Возникновение.</strong> Возник в VII веке на Аравийском полуострове.</p>
+              <p><strong>Основные положения.</strong> Единобожие, вера, благочестие, ответственность перед Богом, социальная справедливость.</p>
+              <p><strong>Священные тексты.</strong> Коран, сунна.</p>
+              <p><strong>Направления.</strong> Суннизм и шиизм; внутри традиции существуют разные школы правовых и теологических интерпретаций.</p>
+              <p><strong>Культурное значение.</strong> Влияние на архитектуру, право, образование, медицину и литературу в исламском мире.</p>
+              <p><strong>Интересный факт.</strong> В исламской традиции Коран рассматривается как священный текст, переданный в форме откровения и сохраняющийся в письменной и ритуальной практике.</p>
+            </article>
+
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header">
+                <span class="detail-tag">Буддизм</span>
+              </div>
+              <p><strong>Краткое описание.</strong> Буддизм — религиозно-философская традиция, связанная с учением Будды Шакьямуни и идеей освобождения от страдания.</p>
+              <p><strong>Возникновение.</strong> Возник в Индии в VI–V веках до н. э.</p>
+              <p><strong>Основные положения.</strong> Четыре благородных истины, путь к освобождению, практика мудрости, этики и медитации.</p>
+              <p><strong>Священные тексты.</strong> Канонические тексты, в том числе палийский канон, а также многочисленные сутры и трактаты.</p>
+              <p><strong>Направления.</strong> Тхеравада, махаяна, ваджраяна.</p>
+              <p><strong>Культурное значение.</strong> Влияние на философию, искусство, архитектуру, медитацию и этику в Южной и Восточной Азии.</p>
+              <p><strong>Интересный факт.</strong> Буддизм имеет разнообразие школ и традиций, поэтому его изучение требует внимательного различения теоретических и региональных форм.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="national-religions" class="info-section">
+          <div class="section-heading">
+            <p class="eyebrow">Национальные религии</p>
+            <h2>Традиции, тесно связанные с культурой народов</h2>
+          </div>
+
+          <div class="religion-details-grid">
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header"><span class="detail-tag">Иудаизм</span></div>
+              <p>Термин «национальные религии» условен и используется в учебной и научной литературе как обозначение традиций, исторически связанных с определёнными народами и культурами.</p>
+              <p><strong>Происхождение.</strong> Исторически связан с древнееврейским народом и культурой Ближнего Востока.</p>
+              <p><strong>Основные представления.</strong> Единобожие, связь народа и земли, священный закон, историческая память.</p>
+              <p><strong>Тексты.</strong> Танах, Тора, пророческие и мудрые книги.</p>
+              <p><strong>Культурное значение.</strong> Влияние на религиозную, философскую и литературную традицию многих культур.</p>
+            </article>
+
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header"><span class="detail-tag">Индуизм</span></div>
+              <p><strong>Происхождение.</strong> Исторически сложился в Южной Азии в широком культурном контексте Индии.</p>
+              <p><strong>Основные представления.</strong> Многообразие путей духовного развития, карма, дхарма, сансара, мокша.</p>
+              <p><strong>Тексты.</strong> Веды, Упанишады, Бхагавадгита, эпосы «Махабхарата» и «Рамаяна».</p>
+              <p><strong>Культурное значение.</strong> Его формы проявляются в философии, храмовой архитектуре, музыке и повседневной культуре.</p>
+            </article>
+
+            <article class="detail-card tilt-card" data-tilt>
+              <div class="detail-header"><span class="detail-tag">Синтоизм</span></div>
+              <p><strong>Происхождение.</strong> Исторически связан с японской культурой и местными сакральными практиками.</p>
+              <p><strong>Основные представления.</strong> Ками как природные и исторические силы, связь человека с природой и предками.</p>
+              <p><strong>Тексты.</strong> Классические записи и устная традиция, включая важные священные тексты японской культуры.</p>
+              <p><strong>Культурное значение.</strong> Влияние на ритуальные практики, праздники, искусство и национальную символику.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="slides-section section-panel tilt-card" data-tilt>
+          <div class="section-heading left-aligned">
+            <p class="eyebrow">Презентация</p>
+            <h2>Краткий обзор темы</h2>
+          </div>
+
+          <div class="slide-grid">
+            <article class="slide-card"><span class="slide-number">Слайд 1</span><h3>Религиоведение</h3><ul><li>Наука о религии</li><li>Исторический подход</li><li>Культурный контекст</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 2</span><h3>Понятие религии</h3><ul><li>Сакральное и символическое</li><li>Ритуальная практика</li><li>Мораль и ценности</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 3</span><h3>Что изучает религиоведение</h3><ul><li>Тексты и обряды</li><li>Общество и культура</li><li>Исторические процессы</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 4</span><h3>Функции религии</h3><ul><li>Смыслообразование</li><li>Социальная связь</li><li>Мораль и символика</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 5</span><h3>Мировые религии</h3><ul><li>Христианство</li><li>Ислам</li><li>Буддизм</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 6</span><h3>Христианство</h3><ul><li>Библия</li><li>Церковь</li><li>Направления</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 7</span><h3>Ислам</h3><ul><li>Коран</li><li>Шариат</li><li>Мусульманские общины</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 8</span><h3>Буддизм</h3><ul><li>Страдание и освобождение</li><li>Этика</li><li>Медитация</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 9</span><h3>Национальные религии</h3><ul><li>Иудаизм</li><li>Индуизм</li><li>Синтоизм</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 10</span><h3>Роль религии</h3><ul><li>Искусство</li><li>Архитектура</li><li>Общество</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 11</span><h3>Культурное значение</h3><ul><li>Память</li><li>Традиция</li><li>Идентичность</li></ul></article>
+            <article class="slide-card"><span class="slide-number">Слайд 12</span><h3>Заключение</h3><ul><li>Религия как феномен</li><li>Академический подход</li><li>Научное изучение</li></ul></article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+  </body>
+</html>

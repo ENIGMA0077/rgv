@@ -1,0 +1,978 @@
+:root {
+  --bg-1: #080b10;
+  --bg-2: #10151a;
+  --bg-3: #191b1f;
+  --panel: rgba(18, 20, 22, 0.74);
+  --panel-strong: rgba(23, 25, 28, 0.9);
+  --line: rgba(212, 176, 103, 0.22);
+  --line-strong: rgba(244, 214, 157, 0.52);
+  --text: #f2e4c8;
+  --muted: rgba(242, 228, 200, 0.72);
+  --gold: #d8b36d;
+  --gold-soft: #f0d291;
+  --gold-strong: #fff2d1;
+  --shadow: rgba(0, 0, 0, 0.54);
+  --highlight: rgba(255, 255, 255, 0.18);
+  --card-glow: rgba(214, 180, 109, 0.18);
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(204, 170, 104, 0.16), transparent 18%),
+    linear-gradient(150deg, #05080d 0%, #0b0f12 24%, #11161c 45%, #090d12 100%);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: -18%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(210, 167, 82, 0.12), transparent 18%),
+    radial-gradient(circle at 80% 30%, rgba(245, 221, 170, 0.07), transparent 22%),
+    radial-gradient(circle at 60% 80%, rgba(134, 102, 54, 0.12), transparent 18%),
+    linear-gradient(120deg, rgba(255,255,255,0.015), rgba(255,255,255,0.005));
+  filter: blur(12px);
+}
+
+body::after {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.015),
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.page-shell {
+  position: relative;
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 12px 10px;
+}
+
+.brand-block,
+.nav-link,
+.section-panel,
+.religion-card,
+.info-pill,
+.lux-button,
+.brand-block {
+  position: relative;
+}
+
+.brand-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, rgba(29, 31, 33, 0.86), rgba(15, 16, 19, 0.9));
+  border: 1px solid rgba(230, 197, 120, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 16px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.brand-block::before,
+.nav-link::before,
+.section-panel::before,
+.religion-card::before,
+.info-pill::before,
+.lux-button::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.01) 32%, rgba(240,170,62,0.04) 100%);
+  pointer-events: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,219,147,0.22), rgba(126,92,36,0.42));
+  border: 1px solid rgba(255, 227, 168, 0.4);
+  box-shadow: inset 0 0 18px rgba(255,214,127,0.3), 0 6px 18px rgba(0,0,0,0.2);
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
+.brand-text {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(242, 228, 200, 0.8);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  background: linear-gradient(145deg, rgba(22,24,27,0.88), rgba(10,11,14,0.74));
+  border: 1px solid rgba(207, 167, 92, 0.17);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 24px rgba(0,0,0,0.18);
+  transition: box-shadow 180ms ease;
+}
+
+.ambient {
+  position: fixed;
+  width: 38rem;
+  height: 38rem;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.26;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ambient-left {
+  top: -8rem;
+  left: -8rem;
+  background: rgba(193, 150, 77, 0.16);
+}
+
+.ambient-right {
+  right: -8rem;
+  top: 14rem;
+  background: rgba(255, 244, 214, 0.08);
+}
+
+.section-panel,
+.religion-card,
+.info-pill {
+  background: linear-gradient(145deg, rgba(30, 31, 34, 0.84), rgba(13, 15, 18, 0.94));
+  border: 1px solid rgba(236, 198, 118, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 -2px 18px rgba(0,0,0,0.25),
+    0 26px 46px rgba(0,0,0,0.28);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.section-panel {
+  border-radius: 30px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 24px;
+  min-height: 640px;
+  padding: 42px 42px 38px;
+  margin-top: 20px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 6vw, 8.2rem);
+  line-height: 0.86;
+  letter-spacing: 0.06em;
+  color: #f9ebcc;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 0 44px rgba(204, 161, 88, 0.15);
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: 1.2rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  max-width: 620px;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.meta-item {
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, rgba(21,22,25,0.86), rgba(12,13,17,0.92));
+  border: 1px solid rgba(200, 172, 109, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 231, 171, 0.72);
+  margin-bottom: 8px;
+}
+
+.meta-value {
+  font-size: 0.96rem;
+  color: #f3e7c8;
+}
+
+.hero-actions {
+  margin-top: 34px;
+}
+
+.lux-button {
+  --button-shadow: rgba(0,0,0,0.35);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 24px;
+  border: 1px solid rgba(233, 200, 123, 0.32);
+  border-radius: 999px;
+  background:
+    linear-gradient(160deg, rgba(238, 197, 118, 0.2), rgba(59, 46, 22, 0.4) 35%, rgba(13, 14, 17, 0.9) 100%);
+  color: var(--text);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -12px 22px rgba(0,0,0,0.22),
+    0 18px 28px rgba(0,0,0,0.26);
+  transition: box-shadow 180ms ease, border-color 180ms ease;
+  overflow: hidden;
+}
+
+.lux-button::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(255, 228, 166, 0.44), transparent 18%, transparent 55%);
+  pointer-events: none;
+}
+
+.primary {
+  min-width: 290px;
+}
+
+.button-arrow {
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+}
+
+.visual-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(360px, 70vw);
+  height: min(360px, 70vw);
+}
+
+.visual-emblem::before,
+.visual-emblem::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.75;
+}
+
+.visual-emblem::before {
+  inset: 18% 12% 22% 12%;
+  background: radial-gradient(circle, rgba(219, 180, 102, 0.35), rgba(219, 180, 102, 0.06) 48%, transparent 76%);
+}
+
+.visual-emblem::after {
+  inset: 28% 20% 20% 20%;
+  background: radial-gradient(circle, rgba(255, 240, 197, 0.2), transparent 70%);
+}
+
+.visual-emblem span {
+  position: relative;
+  z-index: 1;
+  color: rgba(245, 220, 170, 0.9);
+  font-size: clamp(5rem, 8vw, 8rem);
+  text-shadow: 0 0 30px rgba(215, 181, 111, 0.3);
+}
+
+.traditions {
+  padding-top: 80px;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.left-aligned {
+  align-items: flex-start;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-family: 'Cormorant Garamond', serif;
+  color: #f6ebd3;
+  letter-spacing: 0.02em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 26px;
+}
+
+.religion-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  border-radius: 28px;
+  transition: box-shadow 180ms ease;
+}
+
+.religion-card::after,
+.section-panel::after,
+.info-pill::after,
+.nav-link::after,
+.brand-block::after,
+.lux-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 26%, transparent 55%, rgba(255,221,167,0.1));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.card-art {
+  position: relative;
+  height: 170px;
+  border-bottom: 1px solid rgba(234, 197, 111, 0.12);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,14,0.08), rgba(8,12,14,0.48));
+}
+
+.art-christianity {
+  background:
+    linear-gradient(135deg, rgba(86, 63, 31, 0.28), rgba(18, 18, 19, 0.2)),
+    radial-gradient(circle at 28% 26%, rgba(214, 191, 118, 0.22), transparent 18%),
+    linear-gradient(120deg, #1d2129, #111820 45%, #0d0d0f);
+}
+
+.art-islam {
+  background:
+    linear-gradient(135deg, rgba(52, 64, 53, 0.32), rgba(18, 18, 19, 0.2)),
+    radial-gradient(circle at 30% 30%, rgba(174, 211, 183, 0.18), transparent 20%),
+    linear-gradient(120deg, #101b1a, #111821 50%, #0a0f12);
+}
+
+.art-buddhism {
+  background:
+    linear-gradient(135deg, rgba(79, 58, 42, 0.26), rgba(15, 17, 18, 0.2)),
+    radial-gradient(circle at 30% 20%, rgba(197, 173, 115, 0.2), transparent 24%),
+    linear-gradient(120deg, #191912, #15181a 50%, #090d12);
+}
+
+.art-judaism {
+  background:
+    linear-gradient(135deg, rgba(77, 73, 61, 0.26), rgba(20, 15, 14, 0.2)),
+    radial-gradient(circle at 24% 18%, rgba(203, 165, 106, 0.18), transparent 22%),
+    linear-gradient(120deg, #1a1a1d, #111a1d 52%, #0c0d12);
+}
+
+.art-hinduism {
+  background:
+    linear-gradient(135deg, rgba(77, 50, 34, 0.3), rgba(15, 17, 18, 0.2)),
+    radial-gradient(circle at 32% 24%, rgba(233, 182, 88, 0.14), transparent 25%),
+    linear-gradient(120deg, #1d1a13, #142024 45%, #0d0f10);
+}
+
+.art-shinto {
+  background:
+    linear-gradient(135deg, rgba(52, 63, 60, 0.26), rgba(15, 17, 18, 0.2)),
+    radial-gradient(circle at 26% 18%, rgba(204, 176, 117, 0.18), transparent 16%),
+    linear-gradient(120deg, #171d1d, #0d1315 50%, #070b0d);
+}
+
+.card-content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 22px 20px;
+}
+
+.card-tag {
+  align-self: flex-start;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(198, 164, 93, 0.1);
+  border: 1px solid rgba(220, 179, 99, 0.2);
+  color: var(--gold-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-content h3 {
+  margin-top: 18px;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.card-summary {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+.card-details {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 6px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.card-details-inner {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(18, 20, 24, 0.78), rgba(12, 13, 17, 0.92));
+  border: 1px solid rgba(224, 190, 120, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.card-visual {
+  position: relative;
+  min-height: 140px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border: 1px solid rgba(234, 198, 118, 0.14);
+}
+
+.card-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9,12,15,0.12), rgba(9,12,15,0.52));
+}
+
+.card-info {
+  display: grid;
+  gap: 8px;
+}
+
+.card-info p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.88rem;
+}
+
+.card-details strong {
+  color: var(--text);
+}
+
+.card-content p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+.card-content .lux-button {
+  margin-top: auto;
+  align-self: flex-start;
+  width: auto;
+  min-width: 160px;
+  padding-inline: 18px;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.religion-card.is-open {
+  border-color: rgba(233, 196, 114, 0.28);
+}
+
+.religion-card.is-open .card-details {
+  display: grid;
+}
+
+.academy {
+  padding: 34px 30px 30px;
+  margin-top: 70px;
+  border-radius: 30px;
+}
+
+.academy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.academy-column {
+  display: grid;
+  gap: 18px;
+}
+
+.info-pill {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 22px;
+  border-radius: 22px;
+  min-height: 120px;
+}
+
+.pill-index {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(211, 176, 109, 0.17), rgba(30, 31, 35, 0.8));
+  border: 1px solid rgba(230, 196, 120, 0.22);
+  color: var(--gold-soft);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.info-pill h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.info-pill p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.tilt-card:hover,
+.lux-button:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -4px 20px rgba(0, 0, 0, 0.28),
+    0 25px 42px rgba(0,0,0,0.28),
+    0 0 26px rgba(227, 186, 101, 0.12);
+}
+
+.page-article {
+  padding-bottom: 80px;
+}
+
+.content-page {
+  display: grid;
+  gap: 32px;
+  margin-top: 30px;
+}
+
+.info-essay {
+  padding: 28px 30px;
+  border-radius: 28px;
+}
+
+.essay-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.essay-columns p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.study-grid,
+.religion-details-grid,
+.slide-grid,
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.study-card,
+.detail-card,
+.slide-card,
+.term-card {
+  position: relative;
+  padding: 22px 20px 20px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(26, 28, 31, 0.9), rgba(12, 14, 17, 0.94));
+  border: 1px solid rgba(232, 198, 120, 0.17);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 20px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card-number,
+.slide-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, rgba(214, 176, 112, 0.18), rgba(27, 29, 33, 0.84));
+  border: 1px solid rgba(232, 198, 120, 0.18);
+  color: var(--gold-soft);
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  margin-bottom: 14px;
+}
+
+.study-card h3,
+.slide-card h3,
+.term-card h3 {
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 12px;
+}
+
+.study-card p,
+.detail-card p,
+.slide-card li,
+.term-card p,
+.source-list li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.content-essay,
+.info-section,
+.slides-section,
+.source-list,
+.crossword-panel {
+  padding: 28px 26px;
+  border-radius: 28px;
+}
+
+.info-section,
+.slides-section {
+  display: grid;
+  gap: 20px;
+}
+
+.detail-card {
+  display: grid;
+  gap: 8px;
+}
+
+.detail-header {
+  margin-bottom: 6px;
+}
+
+.detail-tag {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(199, 164, 94, 0.11);
+  border: 1px solid rgba(228, 193, 114, 0.2);
+  color: var(--gold-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.detail-card p {
+  margin: 0;
+}
+
+.slide-card {
+  display: grid;
+  gap: 10px;
+}
+
+.slide-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.quiz-form {
+  display: grid;
+  gap: 20px;
+  padding: 28px 26px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(26, 28, 31, 0.9), rgba(12, 14, 17, 0.94));
+  border: 1px solid rgba(232, 198, 120, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 20px 30px rgba(0, 0, 0, 0.18);
+}
+
+.quiz-question {
+  display: grid;
+  gap: 12px;
+  padding: 20px 18px;
+  border-radius: 20px;
+  background: rgba(17, 19, 21, 0.5);
+  border: 1px solid rgba(222, 184, 101, 0.12);
+}
+
+.quiz-question h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.quiz-question label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.01);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.quiz-question input {
+  accent-color: var(--gold);
+}
+
+.quiz-question.is-correct {
+  border-color: rgba(126, 202, 120, 0.12);
+  background: rgba(17, 19, 21, 0.5);
+}
+
+.quiz-question.is-wrong {
+  border-color: rgba(213, 111, 99, 0.42);
+  background: rgba(62, 30, 25, 0.28);
+}
+
+.quiz-actions {
+  margin-top: 8px;
+}
+
+.result-box {
+  min-height: 52px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(19, 21, 22, 0.7);
+  border: 1px solid rgba(215, 178, 102, 0.18);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.crossword-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.crossword-item {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(15, 17, 20, 0.52);
+  border: 1px solid rgba(224, 187, 109, 0.12);
+}
+
+.crossword-item span {
+  color: var(--muted);
+}
+
+.crossword-item input {
+  width: min(240px, 100%);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 182, 99, 0.2);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+}
+
+.crossword-item.is-correct {
+  border-color: rgba(128, 201, 126, 0.48);
+}
+
+.crossword-item.is-wrong {
+  border-color: rgba(213, 111, 99, 0.48);
+}
+
+.terms-grid {
+  margin-top: 12px;
+}
+
+.term-card {
+  display: grid;
+  gap: 8px;
+}
+
+.term-card h3 {
+  margin: 0;
+  letter-spacing: 0.08em;
+}
+
+.term-card p {
+  margin: 0;
+}
+
+.source-list ol {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.source-list a {
+  color: var(--gold-soft);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 30px 22px 24px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+  }
+
+  .topbar {
+    padding-top: 12px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .meta-grid,
+  .card-grid,
+  .academy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  h1 {
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+}
