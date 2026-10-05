@@ -12,6 +12,7 @@ ENV/
 # Local configuration and data
 .env
 *.sqlite3
+staticfiles/
 
 # Editor and operating system files
 .vscode/
