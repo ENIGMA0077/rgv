@@ -22,4 +22,4 @@ python manage.py runserver
 
 В репозитории есть `render.yaml` с командой запуска Django-приложения, установкой production-зависимостей и сборкой статических файлов. `Procfile` также задает правильную WSGI-команду для запуска. Создайте Web Service из этого GitHub-репозитория на Render и используйте Blueprint, чтобы применить настройки из файла. Render сгенерирует `DJANGO_SECRET_KEY` и установит production-режим.
 
-Если сервис уже создан вручную, проверьте в Render Dashboard поле **Start Command**: оно должно быть `gunicorn religion_site.wsgi:application`. Настройки существующего сервиса могут переопределять `render.yaml` и `Procfile`; команда вроде `gunicorn app:app` для этого Django-проекта неверна.
+Если сервис уже создан вручную, проверьте в Render Dashboard поле **Start Command**: рекомендуется `gunicorn religion_site.wsgi:application`. Настройки существующего сервиса могут переопределять `render.yaml` и `Procfile`. Для совместимости с уже настроенной командой `gunicorn app:app` в корне проекта есть `app.py`.
